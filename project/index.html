@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fussball Quiz Champion</title>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+  body { background: #05070d; color: #f5f7fb; font-family: system-ui, sans-serif; }
+  #loader { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center;
+            font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px;
+            letter-spacing: 0.2em; text-transform: uppercase; color: #00ff88; }
+  #loader::after { content: '●'; margin-left: 8px; animation: pulse 1s infinite; }
+  @keyframes pulse { 0%,100% { opacity: 0.2; } 50% { opacity: 1; } }
+</style>
+
+<!-- React + Babel (external — load fine) -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="loader">Loading match centre</div>
+<div id="app"></div>
+
+<!-- Bootstrap: load local resources with auth token preserved -->
+<script>
+(async function bootstrap() {
+  const token = window.location.search || '';
+
+  async function loadCss(file) {
+    const css = await fetch(file + token).then(r => r.text());
+    const link = document.createElement('style');
+    link.setAttribute('data-src', file);
+    link.textContent = css;
+    document.head.appendChild(link);
+  }
+
+  async function loadJs(file) {
+    const code = await fetch(file + token).then(r => r.text());
+    const s = document.createElement('script');
+    s.setAttribute('data-src', file);
+    s.textContent = code;
+    document.head.appendChild(s);
+  }
+
+  async function loadJsx(file) {
+    const code = await fetch(file + token).then(r => r.text());
+    const out = Babel.transform(code, {
+      presets: [['react', { runtime: 'classic' }]],
+    }).code;
+    const s = document.createElement('script');
+    s.setAttribute('data-src', file);
+    s.textContent = out;
+    document.head.appendChild(s);
+  }
+
+  try {
+    // 1. CSS
+    await loadCss('styles.css');
+
+    // 2. Vanilla JS (data + utilities)
+    for (const f of ['data.js', 'questions.js', 'bracket-utils.js']) {
+      await loadJs(f);
+    }
+
+    // 3. JSX components (order matters — dependencies)
+    const jsxFiles = [
+      'tweaks-panel.jsx',
+      'crest.jsx',
+      'chrome.jsx',
+      'landing.jsx',
+      'bracket.jsx',
+      'preview.jsx',
+      'match.jsx',
+      'fulltime.jsx',
+      'app.jsx',
+    ];
+    for (const f of jsxFiles) {
+      await loadJsx(f);
+    }
+
+    // Remove loader
+    document.getElementById('loader').remove();
+  } catch (err) {
+    console.error('Bootstrap failed:', err);
+    document.getElementById('loader').textContent = 'Fehler beim Laden: ' + err.message;
+  }
+})();
+</script>
+</body>
+</html>

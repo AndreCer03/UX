@@ -1,0 +1,135 @@
+// Fragen-Bank — 4 Schwierigkeitsstufen
+// Du kannst hier Fragen einfach hinzufügen/editieren!
+// Struktur: { q: "Frage?", a: ["Option1", "Option2", "Option3", "Option4"], correct: 0 }
+// "correct" = Index der richtigen Antwort (0-3)
+
+window.QUESTIONS = {
+  // ========== ACHTELFINALE — LEICHT ==========
+  easy: [
+    // ── Crest-Quiz (Wappen erkennen) ──
+    { q: 'Welcher Verein ist das?', crestClubId: 'fcb_m', a: ['Bayern München', 'FC Liverpool', 'Manchester United', 'Arsenal'], correct: 0 },
+    { q: 'Welcher Verein ist das?', crestClubId: 'bvb',   a: ['Bayern München', 'Borussia Dortmund', 'AC Milan', 'Bayer Leverkusen'], correct: 1 },
+    { q: 'Welcher Verein ist das?', crestClubId: 'rma',   a: ['FC Barcelona', 'Real Madrid', 'Atlético Madrid', 'PSG'], correct: 1 },
+    { q: 'Welcher Verein ist das?', crestClubId: 'fcb',   a: ['Real Madrid', 'AS Rom', 'FC Barcelona', 'Atlético Madrid'], correct: 2 },
+    { q: 'Welcher Verein ist das?', crestClubId: 'juv',   a: ['Newcastle United', 'Juventus Turin', 'Inter Mailand', 'AC Mailand'], correct: 1 },
+    { q: 'Welcher Verein ist das?', crestClubId: 'psg',   a: ['Inter Mailand', 'Chelsea FC', 'Paris Saint-Germain', 'FC Porto'], correct: 2 },
+    // ── Regulär ──
+    { q: 'Wie viele Spieler stehen pro Team auf dem Feld?', a: ['9', '10', '11', '12'], correct: 2 },
+    { q: 'Wie lange dauert ein Fussballspiel regulär?', a: ['60 Min', '80 Min', '90 Min', '100 Min'], correct: 2 },
+    { q: 'Welche Karte bedeutet Platzverweis?', a: ['Gelb', 'Grün', 'Rot', 'Blau'], correct: 2 },
+    { q: 'Welches Land hat die Premier League?', a: ['Spanien', 'England', 'Italien', 'Deutschland'], correct: 1 },
+    { q: 'Wer ist der Rekord-Torschütze von Real Madrid?', a: ['Messi', 'Benzema', 'Ronaldo', 'Raúl'], correct: 2 },
+    { q: 'Welche Farbe trägt Bayern München traditionell zuhause?', a: ['Blau', 'Rot', 'Weiss', 'Schwarz'], correct: 1 },
+    { q: 'Wie viele Tore bringt ein "Hattrick"?', a: ['2', '3', '4', '5'], correct: 1 },
+    { q: 'Welcher Verein heisst "Die Roten Teufel" (Manchester)?', a: ['Man City', 'Man United', 'Liverpool', 'Arsenal'], correct: 1 },
+    { q: 'Welches Team gewann die WM 2022?', a: ['Frankreich', 'Brasilien', 'Argentinien', 'Deutschland'], correct: 2 },
+    { q: 'Aus welchem Land kommt Cristiano Ronaldo?', a: ['Brasilien', 'Spanien', 'Portugal', 'Argentinien'], correct: 2 },
+    { q: 'Wie heisst das Stadion von Borussia Dortmund?', a: ['Allianz Arena', 'Signal Iduna Park', 'Olympiastadion', 'Veltins Arena'], correct: 1 },
+    { q: 'Wie viele Auswechslungen sind heute meist erlaubt?', a: ['3', '4', '5', '7'], correct: 2 },
+    { q: 'Welcher Spieler trägt die Trikotnummer 10 traditionell?', a: ['Stürmer', 'Torwart', 'Spielmacher', 'Verteidiger'], correct: 2 },
+    { q: 'Welches Tier ist im Logo von Tottenham?', a: ['Adler', 'Hahn', 'Löwe', 'Drache'], correct: 1 },
+    { q: 'In welchem Land wurde Fussball erfunden?', a: ['Deutschland', 'Brasilien', 'England', 'Italien'], correct: 2 },
+    { q: 'Welche Farbe haben die Trikots von Juventus traditionell?', a: ['Rot-Weiss', 'Schwarz-Weiss', 'Blau-Weiss', 'Grün-Weiss'], correct: 1 },
+    { q: 'Welches Team nennt man "Die Bayern"?', a: ['Dortmund', 'Bayern München', 'Leverkusen', 'Schalke'], correct: 1 },
+    { q: 'Wie viele Spielzeiten dauert ein Match (Halbzeiten)?', a: ['1', '2', '3', '4'], correct: 1 },
+    { q: 'Welche Liga ist die höchste Spielklasse in Deutschland?', a: ['1. Liga', '2. Bundesliga', 'Bundesliga', 'Premier'], correct: 2 },
+    { q: 'Wo findet das Champions-League-Finale jedes Jahr statt?', a: ['Immer Wembley', 'Wechselnd', 'Immer Madrid', 'Immer Paris'], correct: 1 },
+  ],
+
+  // ========== VIERTELFINALE — MITTEL ==========
+  medium: [
+    // ── Crest-Quiz ──
+    { q: 'Welcher Verein ist das?', crestClubId: 'liv',   a: ['Manchester United', 'FC Liverpool', 'Arsenal', 'Bayern München'], correct: 1 },
+    { q: 'Welcher Verein ist das?', crestClubId: 'mun',   a: ['FC Liverpool', 'Manchester United', 'AS Rom', 'Sevilla'], correct: 1 },
+    { q: 'Welcher Verein ist das?', crestClubId: 'mil',   a: ['Bayer Leverkusen', 'Atlético Madrid', 'AC Mailand', 'Bayern München'], correct: 2 },
+    { q: 'Welcher Verein ist das?', crestClubId: 'int',   a: ['Inter Mailand', 'SSC Neapel', 'PSG', 'Chelsea FC'], correct: 0 },
+    { q: 'Welcher Verein ist das?', crestClubId: 'che',   a: ['Inter Mailand', 'Lyon', 'Chelsea FC', 'FC Porto'], correct: 2 },
+    { q: 'Welcher Verein ist das?', crestClubId: 'ars',   a: ['FC Liverpool', 'Bayern München', 'Arsenal FC', 'Manchester United'], correct: 2 },
+    // ── Regulär ──
+    { q: 'Wer gewann den Ballon d\'Or 2023?', a: ['Haaland', 'Mbappé', 'Messi', 'Vinicius'], correct: 2 },
+    { q: 'Welcher Verein gewann die meisten Champions-League-Titel?', a: ['Bayern', 'Barcelona', 'Real Madrid', 'Milan'], correct: 2 },
+    { q: 'Wo spielt Jude Bellingham (Stand 2024)?', a: ['Man City', 'Real Madrid', 'Chelsea', 'PSG'], correct: 1 },
+    { q: 'Welches Stadion hat die grösste Kapazität in Europa?', a: ['Wembley', 'Camp Nou', 'Bernabéu', 'San Siro'], correct: 1 },
+    { q: 'Wie viele WM-Titel hat Brasilien gewonnen?', a: ['3', '4', '5', '6'], correct: 2 },
+    { q: 'Welcher Trainer gewann die CL mit Bayern (Triple 2020)?', a: ['Klopp', 'Tuchel', 'Flick', 'Nagelsmann'], correct: 2 },
+    { q: 'Welches Team hat Pep Guardiola NIE trainiert?', a: ['Barcelona', 'Bayern', 'Man City', 'Real Madrid'], correct: 3 },
+    { q: 'Wer ist der jüngste WM-Sieger der Geschichte?', a: ['Pelé', 'Mbappé', 'Maradona', 'Messi'], correct: 0 },
+    { q: 'Welcher Verein ist als "Die alte Dame" bekannt?', a: ['Inter', 'Milan', 'Juventus', 'Roma'], correct: 2 },
+    { q: 'Welche Nation gewann die EM 2024?', a: ['England', 'Frankreich', 'Spanien', 'Deutschland'], correct: 2 },
+    { q: 'Welcher Spieler hält den Rekord für Tore in einem Kalenderjahr?', a: ['Messi', 'Ronaldo', 'Müller', 'Lewandowski'], correct: 0 },
+    { q: 'In welcher Stadt steht das San-Siro-Stadion?', a: ['Rom', 'Mailand', 'Turin', 'Neapel'], correct: 1 },
+    { q: 'Welcher Verein heisst auch "I Rossoneri"?', a: ['Roma', 'Inter', 'AC Milan', 'Napoli'], correct: 2 },
+    { q: 'Wer ist Rekord-Torschütze der Bundesliga?', a: ['Müller', 'Lewandowski', 'Gomez', 'Klose'], correct: 1 },
+    { q: 'Welcher Spieler wurde "El Fenómeno" genannt?', a: ['Romário', 'Ronaldinho', 'Ronaldo (BR)', 'Rivaldo'], correct: 2 },
+    { q: 'Welches Land gewann die WM 1998?', a: ['Brasilien', 'Frankreich', 'Italien', 'Deutschland'], correct: 1 },
+    { q: 'Wie viele Spieler hat ein Team in einem Match maximal eingesetzt (inkl. Wechsel)?', a: ['11', '14', '16', '18'], correct: 2 },
+    { q: 'Welcher Verein gewann die erste Champions League (1956)?', a: ['Real Madrid', 'AC Milan', 'Benfica', 'Reims'], correct: 0 },
+    { q: 'Welcher Spieler hat die meisten EM-Endrundenspiele bestritten?', a: ['Ronaldo (POR)', 'Buffon', 'Schweinsteiger', 'Iniesta'], correct: 0 },
+    { q: 'Wo wurde die WM 2010 ausgetragen?', a: ['Deutschland', 'Brasilien', 'Südafrika', 'Russland'], correct: 2 },
+  ],
+
+  // ========== HALBFINALE — SCHWER ==========
+  hard: [
+    // ── Crest-Quiz ──
+    { q: 'Welcher Verein ist das?', crestClubId: 'atm',   a: ['Sevilla', 'Atlético Madrid', 'RB Leipzig', 'Bayer Leverkusen'], correct: 1 },
+    { q: 'Welcher Verein ist das?', crestClubId: 'nap',   a: ['Olympique Marseille', 'SSC Neapel', 'Inter Mailand', 'Manchester City'], correct: 1 },
+    { q: 'Welcher Verein ist das?', crestClubId: 'sev',   a: ['Benfica Lissabon', 'Atlético Madrid', 'FC Sevilla', 'Ajax Amsterdam'], correct: 2 },
+    { q: 'Welcher Verein ist das?', crestClubId: 'new',   a: ['Juventus Turin', 'FC Basel', 'Newcastle United', 'PSV Eindhoven'], correct: 2 },
+    { q: 'Welcher Verein ist das?', crestClubId: 'tot',   a: ['PSG', 'FC Porto', 'Tottenham Hotspur', 'Olympique Lyon'], correct: 2 },
+    { q: 'Welcher Verein ist das?', crestClubId: 'rbl',   a: ['Atlético Madrid', 'RB Leipzig', 'Arsenal FC', 'Bayer Leverkusen'], correct: 1 },
+    // ── Regulär ──
+    { q: 'In welchem Jahr fand die erste Fussball-WM statt?', a: ['1928', '1930', '1934', '1938'], correct: 1 },
+    { q: 'Welcher Verein gewann das "Triple" 2010 (CL+Liga+Pokal)?', a: ['Bayern', 'Barcelona', 'Inter Mailand', 'Real Madrid'], correct: 2 },
+    { q: 'Wer trifft als einziger Torwart mit Kopfballtor in der CL (2024)?', a: ['Ter Stegen', 'Alisson', 'Neuer', 'Courtois'], correct: 1 },
+    { q: 'In welcher Saison erzielte Lewandowski 41 Bundesliga-Tore?', a: ['2019/20', '2020/21', '2021/22', '2018/19'], correct: 1 },
+    { q: 'Welcher Trainer gewann die CL mit dem FC Porto 2004?', a: ['Mourinho', 'Ancelotti', 'Wenger', 'Capello'], correct: 0 },
+    { q: 'Wer war Torschützenkönig der WM 2014?', a: ['Müller', 'Messi', 'Rodríguez', 'Neymar'], correct: 2 },
+    { q: 'In welchem Stadion steigt das Maracanazo 1950?', a: ['Maracanã (BR)', 'Centenario (UR)', 'Monumental (AR)', 'Wembley (EN)'], correct: 0 },
+    { q: 'Welcher Spieler erhielt den Goldenen Schuh am häufigsten?', a: ['Ronaldo', 'Messi', 'Müller', 'van Basten'], correct: 1 },
+    { q: 'Wer schoss das Siegtor im WM-Finale 2014 für Deutschland?', a: ['Müller', 'Götze', 'Schürrle', 'Klose'], correct: 1 },
+    { q: 'Welches Team gewann die Bundesliga-Saison 2022/23?', a: ['Bayern', 'Dortmund', 'Leipzig', 'Leverkusen'], correct: 0 },
+    { q: 'Wie viele rote Karten erhielt Zinedine Zidane in seiner Karriere?', a: ['7', '12', '14', '17'], correct: 2 },
+    { q: 'Welcher Klub gewann die UEFA Conference League 2023?', a: ['West Ham', 'Roma', 'Fiorentina', 'Olympiakos'], correct: 0 },
+    { q: 'Wer ist Rekordspieler der italienischen Nationalmannschaft?', a: ['Buffon', 'Maldini', 'Pirlo', 'Cannavaro'], correct: 0 },
+    { q: 'Welcher Verein hat das Motto "You\'ll Never Walk Alone"?', a: ['Celtic', 'Liverpool', 'Dortmund', 'Alle drei'], correct: 3 },
+    { q: 'Wer war erster afrikanischer Ballon-d\'Or-Gewinner?', a: ['Eto\'o', 'Drogba', 'Weah', 'Salah'], correct: 2 },
+    { q: 'Welches Stadion ist das "Theater der Träume"?', a: ['Old Trafford', 'Anfield', 'Emirates', 'Bernabéu'], correct: 0 },
+    { q: 'Welche Mannschaft gewann den allerersten Europapokal der Landesmeister?', a: ['Benfica', 'Real Madrid', 'AC Milan', 'Reims'], correct: 1 },
+    { q: 'Welcher Spieler heisst mit vollem Namen Edinson Roberto Cavani Gómez?', a: ['Cavani', 'Suárez', 'Forlán', 'Godín'], correct: 0 },
+    { q: 'Welcher CL-Final endete 2005 mit dem "Wunder von Istanbul"?', a: ['Liverpool vs Milan', 'Barca vs Arsenal', 'Bayern vs Inter', 'Chelsea vs Bayern'], correct: 0 },
+    { q: 'Wer war Trainer der spanischen Tiki-Taka-Nationalelf (WM 2010)?', a: ['Aragonés', 'Del Bosque', 'Lopetegui', 'Sacchi'], correct: 1 },
+  ],
+
+  // ========== FINALE — SEHR SCHWER ==========
+  expert: [
+    // ── Crest-Quiz ──
+    { q: 'Welcher Verein ist das?', crestClubId: 'avl',   a: ['AS Rom', 'FC Barcelona', 'Aston Villa', 'Atlético Madrid'], correct: 2 },
+    { q: 'Welcher Verein ist das?', crestClubId: 'rom',   a: ['Aston Villa', 'AS Rom', 'FC Barcelona', 'Atlético Madrid'], correct: 1 },
+    { q: 'Welcher Verein ist das?', crestClubId: 'om',    a: ['SSC Neapel', 'Manchester City', 'Olympique Marseille', 'Olympique Lyon'], correct: 2 },
+    { q: 'Welcher Verein ist das?', crestClubId: 'aja',   a: ['FC Sevilla', 'Benfica Lissabon', 'Ajax Amsterdam', 'AC Mailand'], correct: 2 },
+    { q: 'Welcher Verein ist das?', crestClubId: 'lyo',   a: ['PSG', 'Olympique Lyon', 'Atlético Madrid', 'Inter Mailand'], correct: 1 },
+    { q: 'Welcher Verein ist das?', crestClubId: 'por',   a: ['Tottenham Hotspur', 'FC Porto', 'PSG', 'Olympique Marseille'], correct: 1 },
+    { q: 'Welcher Verein ist das?', crestClubId: 'ben',   a: ['Ajax Amsterdam', 'Benfica Lissabon', 'PSV Eindhoven', 'AC Mailand'], correct: 1 },
+    // ── Regulär ──
+    { q: 'In welcher Saison wurde die Champions League (Format) eingeführt?', a: ['1990/91', '1992/93', '1994/95', '1995/96'], correct: 1 },
+    { q: 'Wer erzielte den schnellsten Hattrick in der Bundesliga?', a: ['Lewandowski (9 Min)', 'Müller (12 Min)', 'Klose (8 Min)', 'Gomez (10 Min)'], correct: 0 },
+    { q: 'Welcher Spieler hat als Einziger drei verschiedene CL-Sieger-Klubs?', a: ['Ronaldo (BR)', 'Seedorf', 'Maldini', 'Hagi'], correct: 1 },
+    { q: 'Was bedeutet "Catenaccio"?', a: ['Schnelles Pressing', 'Defensives Bollwerk', 'Doppelpass-Stil', 'Konter-Fussball'], correct: 1 },
+    { q: 'Welcher Trainer gewann CL mit Porto UND Inter?', a: ['Ancelotti', 'Mourinho', 'Capello', 'Conte'], correct: 1 },
+    { q: 'Wer hält den Rekord für die meisten CL-Tore in einer Saison?', a: ['Ronaldo (17)', 'Messi (14)', 'Lewandowski (15)', 'Haaland (15)'], correct: 0 },
+    { q: 'Welches Land richtete die WM 1934 aus?', a: ['Uruguay', 'Italien', 'Frankreich', 'Brasilien'], correct: 1 },
+    { q: 'Welcher Spieler wurde dreimal in Folge Welttorhüter?', a: ['Buffon', 'Casillas', 'Neuer', 'Lev Yashin'], correct: 2 },
+    { q: 'In welchem Jahr gewann Griechenland überraschend die EM?', a: ['2000', '2004', '2008', '1996'], correct: 1 },
+    { q: 'Welcher Verein hat die meisten italienischen Meistertitel (Stand 2024)?', a: ['Milan', 'Inter', 'Juventus', 'Roma'], correct: 2 },
+    { q: 'Wer war Kapitän der Argentinier bei der WM 1986?', a: ['Maradona', 'Passarella', 'Burruchaga', 'Valdano'], correct: 0 },
+    { q: 'Welche WM hatte das offizielle Maskottchen "Goleo"?', a: ['2002', '2006', '2010', '2014'], correct: 1 },
+    { q: 'Wer schoss das berühmte "Tor des Jahrhunderts" (Maradona 1986)?', a: ['gegen Belgien', 'gegen Italien', 'gegen England', 'gegen Brasilien'], correct: 2 },
+    { q: 'Welcher Verein verlor 3 CL-Finals in Folge in den 2010ern?', a: ['Atlético', 'Juventus', 'Bayern', 'PSG'], correct: 1 },
+    { q: 'Wer ist der Rekord-Torschütze der portugiesischen Liga?', a: ['Eusébio', 'Jardel', 'Fernando Peyroteo', 'Ronaldo'], correct: 2 },
+    { q: 'In welchem Jahr wurde die Bundesliga gegründet?', a: ['1955', '1960', '1963', '1965'], correct: 2 },
+    { q: 'Wer war der erste deutsche Trainer im CL-Final mit einem ausländischen Klub?', a: ['Klopp (Liverpool)', 'Tuchel (PSG)', 'Heynckes (Real)', 'Daum'], correct: 1 },
+    { q: 'Welcher Spieler hält den Rekord für Länderspieleinsätze (männlich)?', a: ['Ronaldo (POR)', 'Bader (KUW)', 'Buffon', 'Ramos'], correct: 0 },
+    { q: 'Welches Team gewann die Copa Libertadores 2023?', a: ['Boca Juniors', 'Fluminense', 'Flamengo', 'River Plate'], correct: 1 },
+    { q: 'Was war das Endresultat des CL-Finals 1999 (Bayern vs ManU)?', a: ['1:2', '2:3', '0:2', '1:3'], correct: 0 },
+  ],
+};
